@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .square {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            margin-top: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <button onclick="myMove()">Click Me</button> -->
+    <div class="square" id="myAnimation"></div>
+    <script>
+        var id = null;
+        var elem = document.getElementById("myAnimation");
+        var pos = 0;
+        var y = 0;
+        var x = 0;
+        clearInterval(id);
+        id = setInterval(frame, 60);
+        function frame() {
+            if (y === 900) {
+                clearInterval(id);
+                if (x == 1200) {
+                    while(y!=0){
+                        console.log(y)
+                        y--
+                        elem.style.bottom = y + 'px';
+                    }
+                    
+                }
+                else {
+                    console.log(x)
+                    x = x + 5;
+                    elem.style.left = x + 'px';
+                }
+
+            } else {
+                y = y + 10;
+                x = x + 5;
+                elem.style.top = y + 'px';
+                elem.style.left = x + 'px';
+                console.log('else');
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
